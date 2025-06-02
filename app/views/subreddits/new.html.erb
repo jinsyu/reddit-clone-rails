@@ -1,0 +1,11 @@
+<% content_for :title, "New subreddit" %>
+
+<h1>서브레딧 작성</h1>
+
+<%= render "form", subreddit: @subreddit %>
+
+<br>
+
+<div>
+  <%= link_to "서브레딧 목록", subreddits_path, class: "border border-gray-300 rounded-md px-4 py-2 hover:bg-gray-100" %>
+</div>

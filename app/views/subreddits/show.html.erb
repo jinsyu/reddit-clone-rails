@@ -1,0 +1,12 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @subreddit %>
+
+<% if current_user && current_user.id == @subreddit.user_id %>
+
+<div class="flex gap-4">
+  <%= link_to "수정", edit_subreddit_path(@subreddit) %>
+  <%= button_to "삭제", @subreddit, method: :delete %>
+</div>
+<% end %>
+  <%= link_to "목록", subreddits_path %>

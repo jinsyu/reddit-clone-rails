@@ -1,0 +1,31 @@
+<%= form_with(model: subreddit) do |form| %>
+  <% if subreddit.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(subreddit.errors.count, "error") %> prohibited this subreddit from being saved:</h2>
+
+      <ul>
+        <% subreddit.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :title, "제목", style: "display: block" %>
+    <%= form.textarea :title, class: "w-full border border-gray-300 rounded-md px-4 py-2" %>
+  </div>
+
+  <div>
+    <%= form.label :body, "내용", style: "display: block" %>
+    <%= form.textarea :body, class: "w-full border border-gray-300 rounded-md px-4 py-2" %>
+  </div>
+
+  <div>
+    <%= form.number_field :user_id, value: current_user.id, type: "hidden" %>
+  </div>
+
+  <div>
+    <%= form.submit class: "bg-blue-500 text-white px-4 py-2 rounded-md block" %>
+  </div>
+<% end %>
