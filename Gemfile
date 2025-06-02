@@ -35,7 +35,7 @@ gem "bootsnap", require: false
 gem "kamal", require: false
 
 # Use friendly_id for slug generation
-gem "friendly_id", "~> 5.4.0"
+gem "friendly_id", "~> 5.5.1"
 
 # Add HTTP asset caching/compression and X-Sendfile acceleration to Puma [https://github.com/basecamp/thruster/]
 gem "thruster", require: false
